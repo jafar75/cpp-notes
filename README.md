@@ -4,9 +4,7 @@ This repository documents my journey through C++ — from core language features
 
 ## Structure
 
-- `basics/` — Fundamental language features (types, control flow, enums, etc.)
-- `modern_cpp/` — Smart pointers, lambdas, range-based for loops, etc.
-- `templates/` — Function and class templates, SFINAE, concepts (C++20)
+- `topics/` — Fundamental language features (types, control flow, enums, etc.)
 - `build/` — Compiled binaries and CMake build files
 
 ## Build Instructions
@@ -17,4 +15,4 @@ This project uses CMake to build multiple small executables for each example.
 mkdir build
 cd build
 cmake ..
-make
+cmake --build .

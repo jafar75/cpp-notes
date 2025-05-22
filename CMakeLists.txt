@@ -1,18 +1,25 @@
+# cmake_minimum_required(VERSION 3.21)
+# # project(conan_project LANGUAGES CXX)
 
-cmake_minimum_required(VERSION 3.10)
-project(cpp_learning_journal)
+# set(CMAKE_CXX_STANDARD 20)
+# set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# # Conan toolchain integration is automatic if CMakeToolchain is used
+# find_package(fmt REQUIRED)
+
+# add_executable(conan_project src/main.cpp)
+# target_include_directories(conan_project PRIVATE include)
+# target_link_libraries(conan_project PRIVATE fmt::fmt)
+
+
+
+
+cmake_minimum_required(VERSION 3.21)
+project(cpp_practice)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Helper function to add all executables from subfolders
-function(add_example_subdir dir)
-    file(GLOB sources "${dir}/*.cpp")
-    foreach(src ${sources})
-        get_filename_component(name ${src} NAME_WE)
-        add_executable("${dir}_${name}" ${src})
-    endforeach()
-endfunction()
-
-add_example_subdir(basics)
-# add_example_subdir(modern_cpp)
-# add_example_subdir(templates)
+# Add all topic folders here
+add_subdirectory(topics/enum)
+add_subdirectory(topics/ostream)
+# add_subdirectory(topics/threading)
